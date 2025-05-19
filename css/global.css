@@ -1,0 +1,115 @@
+body {
+	margin: 0;
+	font-family: "Lexend", sans-serif;
+	color: var(--text);
+}
+
+header {
+	background-color: var(--green);
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 0.5rem 1rem;
+}
+
+header .logo {
+	display: flex;
+	align-items: center;
+	font-weight: bold;
+	color: var(--white);
+}
+
+nav {
+  display: block;
+  margin-left: auto;
+}
+
+header nav a {
+	color: var(--white);
+	margin-left: 1rem;
+	text-decoration: none;
+}
+
+header nav a .active {
+	color: var(--light-green);
+}
+
+header nav a:hover {
+	color: var(--light-green);
+}
+
+.user-menu {
+  position: relative;
+  margin-left: 1rem;
+}
+
+.avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background-size: cover;
+  cursor: pointer;
+  border: 2px solid var(--dark-green);
+}
+
+.dropdown {
+  display: none;
+  position: absolute;
+  top: 44px;
+  right: 0;
+  background-color: var(--white);
+  border: 1px solid var(--gray);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 6px;
+  z-index: 100;
+  min-width: 150px;
+  padding: 0.5rem 0;
+}
+
+.dropdown a {
+  display: block;
+  padding: 0.5rem 1rem;
+  text-decoration: none;
+  color: var(--text);
+}
+
+.dropdown a:hover {
+  background-color: var(--light-green);
+}
+
+.section-title {
+	background-color: var(--green);
+	color: var(--white);
+	padding: 1rem;
+	font-size: 1.4rem;
+	font-weight: bold;
+	text-align: center;
+}
+
+.section-content {
+	padding: 2rem;
+	max-width: 900px;
+	margin: auto;
+	text-align: justify;
+}
+
+footer.footer {
+	background-color: var(--green);
+	color: var(--white);
+	padding: 2rem 1rem;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.footer-text {
+	max-width: 400px;
+	margin-right: 1rem;
+}
+
+.footer .logo {
+	display: flex;
+	align-items: center;
+	gap: 0.5rem;
+	margin-left: 2rem;
+}
