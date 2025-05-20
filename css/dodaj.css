@@ -1,0 +1,173 @@
+main {
+    background-color: var(--white);
+}
+
+main h1 {
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+/* Override global styles */
+.section-title {
+	margin-bottom: 2rem;
+}
+footer.footer {
+	margin-top: 2rem;
+}
+/* End of global styles override */
+
+.container {
+  display: flex;
+  padding: 0 10rem 2rem 10rem;
+  gap: 40px;
+}
+
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  width: 260px;
+}
+
+.image-box {
+  width: 100%;
+  height: 80px;
+  background-color: #6f9675;
+  color: #fff;
+  font-size: 18px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  background-size: cover;
+  background-position: center;
+  overflow: hidden;
+}
+
+.input {
+  padding: 10px;
+  border: none;
+  border-radius: 10px;
+  background-color: #d0e0cf;
+  font-size: 14px;
+}
+
+.input::file-selector-button {
+  background: none;
+  border: none;
+  padding: 5px;
+  font-family: inherit;
+  font-size: 14px;
+}
+
+.submit {
+  padding: 10px;
+  background-color: #6f9675;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.form {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.title-input {
+  padding: 10px;
+  font-size: 16px;
+  border: none;
+  border-radius: 10px;
+  background-color: #cddfcc;
+}
+
+.description-area {
+  flex: 1;
+  min-height: 280px;
+  padding: 10px;
+  font-size: 16px;
+  border: none;
+  border-radius: 10px;
+  background-color: #cddfcc;
+  resize: vertical;
+}
+
+.ads-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    align-items: center;
+}
+
+.ad-item {
+    display: flex;
+    background-color: var(--light-green);
+    border-radius: 12px;
+    overflow: hidden;
+    width: 100%;
+    max-width: 700px;
+}
+
+.ad-image {
+    background-color: var(--green);
+    color: var(--white);
+    font-size: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    flex: 1;
+    min-width: 150px;
+    text-align: center;
+}
+
+.ad-content {
+    padding: 1rem 1.5rem;
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.ad-content h2 {
+    margin: 0;
+}
+
+.ad-content p {
+    margin: 0.5rem 0;
+}
+
+.check-btn {
+    align-self: flex-start;
+    padding: 0.5rem 1.5rem;
+    border: none;
+    border-radius: 12px;
+    background-color: var(--green);
+    color: white;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-top: 2rem;
+}
+
+.pagination button {
+    background-color: var(--light-green);
+    border: none;
+    padding: 0.5rem 0.75rem;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.pagination button.active {
+    font-weight: bold;
+    text-decoration: underline;
+}
