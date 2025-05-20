@@ -38,7 +38,7 @@
 		</div>
 		<nav>
 			<a href="index">Strona główna</a>
-			<a href="ogloszenia">Ogłoszenia</a>
+			<a href="ogloszenia" class="active">Ogłoszenia</a>
 		</nav>
 
 		<?php include 'include/components/usermenu.php'; ?>

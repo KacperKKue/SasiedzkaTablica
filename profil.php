@@ -3,6 +3,8 @@ require_once 'include/auth.php';
 require_once 'include/db.php';
 
 requireLogin();
+
+
 ?>
 <!DOCTYPE html>
 <html lang="pl">

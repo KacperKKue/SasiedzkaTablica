@@ -37,7 +37,7 @@
 			</a>
 		</div>
 		<nav>
-			<a href="index">Strona główna</a>
+			<a href="index" class="active">Strona główna</a>
 			<a href="ogloszenia">Ogłoszenia</a>
 		</nav>
 

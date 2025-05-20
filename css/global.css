@@ -33,12 +33,12 @@ header nav a {
 	text-decoration: none;
 }
 
-header nav a .active {
-	color: var(--light-green);
+header nav a.active {
+	color: var(--light-green) !important;
 }
 
 header nav a:hover {
-	color: var(--light-green);
+	color: var(--light-green) !important;
 }
 
 .user-menu {
