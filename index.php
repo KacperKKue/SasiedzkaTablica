@@ -32,35 +32,23 @@
 
 	<header>
 		<div class="logo">
-			<a href="index.html">
-                <img src="images/logo.png" alt="Logo" height="32" style="margin-right: 8px;">
-            </a>
+			<a href="index">
+				<img src="images/logo.png" alt="Logo" height="32" style="margin-right: 8px;">
+			</a>
 		</div>
 		<nav>
-			<a href="index.html">Strona główna</a>
-			<a href="ogloszenia.html">Ogłoszenia</a>
+			<a href="index">Strona główna</a>
+			<a href="ogloszenia">Ogłoszenia</a>
 		</nav>
 
-		<div class="user-menu">
-			<div class="avatar" id="avatar">
-				<style>
-					#avatar {
-						background-image: url('images/avatar.png') !important;
-					}
-				</style>
-			</div>
-			<div class="dropdown" id="userDropdown">
-				<a href="login.html">Zaloguj</a>
-				<a href="rejestracja.html">Zarejestruj</a>
-			</div>
-		</div>
+		<?php include 'include/components/usermenu.php'; ?>
 	</header>
 
 	<div class="hero">
 		<div class="hero-text">
 			<h2>Ogłoszenia po sąsiedzku</h2>
 			<p>
-				Lokalne ogłoszenia jednorazowe. 
+				Lokalne ogłoszenia jednorazowe.
 				Zleć komuś pracę lub znajdź dodatkowy zarobek w twojej okolicy.
 			</p>
 		</div>
@@ -70,8 +58,11 @@
 		<div class="section-title">CO ROBIMY</div>
 		<div class="section-content">
 			<p>
-				Na Sąsiedzkiej Tablicy możesz w kilka chwil opublikować jednorazowe ogłoszenie - bez opłat i bez komplikacji. Szukasz zgubionego kota, sprzedajesz kanapę, a może chcesz pomóc sąsiadowi?
-				Nasza tablica to proste narzędzie, które łączy ludzi w Twojej okolicy. Dodajesz treść, wybierasz kategorię, podajesz kontakt - gotowe. Ogłoszenie pojawia się od razu i znika, gdy nie będzie już potrzebne.
+				Na Sąsiedzkiej Tablicy możesz w kilka chwil opublikować jednorazowe ogłoszenie - bez opłat i bez
+				komplikacji. Szukasz zgubionego kota, sprzedajesz kanapę, a może chcesz pomóc sąsiadowi?
+				Nasza tablica to proste narzędzie, które łączy ludzi w Twojej okolicy. Dodajesz treść, wybierasz
+				kategorię, podajesz kontakt - gotowe. Ogłoszenie pojawia się od razu i znika, gdy nie będzie już
+				potrzebne.
 				Wierzymy, że małe rzeczy mają znaczenie - szczególnie te, które dzieją się blisko Ciebie.
 			</p>
 		</div>
@@ -93,7 +84,8 @@
 
 	<footer class="footer">
 		<div class="footer-text">
-			Sąsiedzka Tablica - proste ogłoszenia lokalne bez zbędnych formalności. Wspierajmy się nawzajem - codziennie, po sąsiedzku.
+			Sąsiedzka Tablica - proste ogłoszenia lokalne bez zbędnych formalności. Wspierajmy się nawzajem -
+			codziennie, po sąsiedzku.
 		</div>
 		<div class="logo">
 			<img src="images/logo.png" alt="Logo" height="64">

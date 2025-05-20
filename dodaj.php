@@ -1,3 +1,8 @@
+<?php
+require_once 'include/auth.php';
+requireLogin();
+?>
+
 <!DOCTYPE html>
 <html lang="pl">
 
@@ -5,14 +10,14 @@
 	<meta charset="UTF-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-	<title>Sąsiedzka Tablica | Ogłoszenia</title>
+	<title>Sąsiedzka Tablica | Dodaj ogłoszenie</title>
 
 	<link rel="icon" type="image/x-icon" href="images/favicon.ico" />
 
 	<link rel="stylesheet" href="css/normalize.css">
 	<link rel="stylesheet" href="css/variables.css">
 	<link rel="stylesheet" href="css/global.css">
-	<link rel="stylesheet" href="css/ogloszenia.css">
+	<link rel="stylesheet" href="css/dodaj.css">
 
 	<meta name="description" content="Sąsiedzka Tablica - Twoje miejsce na ogłoszenia lokalne.">
 	<meta name="keywords" content="ogłoszenia, lokalne, sąsiedzka tablica, społeczność">
@@ -32,39 +37,40 @@
 
 	<header>
 		<div class="logo">
-			<a href="index.html">
+			<a href="index">
 				<img src="images/logo.png" alt="Logo" height="32" style="margin-right: 8px;">
 			</a>
 		</div>
 		<nav>
-			<a href="index.html">Strona główna</a>
-			<a href="ogloszenia.html">Ogłoszenia</a>
+			<a href="index">Strona główna</a>
+			<a href="ogloszenia">Ogłoszenia</a>
 		</nav>
 
-		<div class="user-menu">
-			<div class="avatar" id="avatar">
-				<style>
-					#avatar {
-						background-image: url('images/avatar.png') !important;
-					}
-				</style>
-			</div>
-			<div class="dropdown" id="userDropdown">
-				<a href="login.html">Zaloguj</a>
-				<a href="rejestracja.html">Zarejestruj</a>
-			</div>
-		</div>
+		<?php include 'include/components/usermenu.php'; ?>
 	</header>
 
 	<main>
-		<div class="section-title">OGŁOSZENIA</div>
+		<div class="section-title">DODAJ OGŁOSZENIE</div>
 
-		<div class="filters">
-			<input type="text" placeholder="Miasto" />
-			<input type="text" placeholder="Kategoria" />
-			<input type="text" placeholder="Nazwa" />
-			<button class="filter-btn">Filtruj</button>
+		<div class="container">
+			<div class="sidebar">
+				<div class="image-box" id="imagePreview">Brak Obrazu</div>
+
+				<input type="file" class="input" placeholder="Obraz" id="imageInput">
+				<input type="text" class="input" placeholder="Kategoria">
+				<input type="text" class="input" placeholder="Miasto">
+				<input type="text" class="input" placeholder="Numer telefonu">
+
+				<button class="submit">Udostępnij</button>
+			</div>
+
+			<div class="form">
+				<input type="text" class="title-input" placeholder="Tytuł">
+				<textarea class="description-area" placeholder="Opis"></textarea>
+			</div>
 		</div>
+
+		<div class="section-title">MOJE OGŁOSZENIA</div>
 
 		<div class="ads-list">
 			<!-- Przykładowe ogłoszenie -->
@@ -116,7 +122,8 @@
 
 	<footer class="footer">
 		<div class="footer-text">
-			Sąsiedzka Tablica - proste ogłoszenia lokalne bez zbędnych formalności. Wspierajmy się nawzajem - codziennie, po sąsiedzku.
+			Sąsiedzka Tablica - proste ogłoszenia lokalne bez zbędnych formalności. Wspierajmy się nawzajem -
+			codziennie, po sąsiedzku.
 		</div>
 		<div class="logo">
 			<img src="images/logo.png" alt="Logo" height="64">
@@ -124,8 +131,7 @@
 	</footer>
 
 	<script src="js/menu.js"></script>
+	<script src="js/formImage.js"></script>
 </body>
 
 </html>
-
-<body>

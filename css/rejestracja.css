@@ -40,3 +40,8 @@ main {
 .register-form button:hover {
   background-color: #2a5d2a;
 }
+
+.register-form .error-message {
+  color: var(--red);
+  font-size: 0.875rem;
+}
