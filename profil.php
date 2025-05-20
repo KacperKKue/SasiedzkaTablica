@@ -4,7 +4,58 @@ require_once 'include/db.php';
 
 requireLogin();
 
+$user_id = $_SESSION['user_id'];
 
+// Pobranie danych użytkownika
+$stmt = $pdo->prepare("SELECT email, username, registered_at FROM users WHERE id = ?");
+$stmt->execute([$user_id]);
+$user = $stmt->fetch();
+
+if (isset($_POST['update_profile'])) {
+    $newUsername = trim($_POST['username']);
+    $newPassword = $_POST['password'];
+    $confirmPassword = $_POST['confirm_password'];
+
+    if ($newPassword !== '' && $newPassword !== $confirmPassword) {
+        die("Hasła się nie zgadzają.");
+    }
+
+    // Aktualizacja danych
+    $sql = "UPDATE users SET username = :username";
+    $params = [':username' => $newUsername];
+
+    if ($newPassword !== '') {
+        $sql .= ", password = :password";
+        $params[':password'] = password_hash($newPassword, PASSWORD_DEFAULT);
+    }
+
+    $sql .= " WHERE id = :id";
+    $params[':id'] = $user_id;
+
+    $stmt = $pdo->prepare($sql);
+    $stmt->execute($params);
+
+    $_SESSION['username'] = $newUsername;
+
+    header("Location: profil");
+    exit;
+}
+
+if (isset($_POST['update_avatar'])) {
+    if (isset($_FILES['avatar']) && $_FILES['avatar']['error'] === UPLOAD_ERR_OK) {
+        $allowedTypes = ['image/png', 'image/jpeg'];
+        if (!in_array($_FILES['avatar']['type'], $allowedTypes)) {
+            die("Nieprawidłowy format obrazka.");
+        }
+
+        $destPath = "users/avatars/$user_id.png";
+        move_uploaded_file($_FILES['avatar']['tmp_name'], $destPath);
+        header("Location: profil");
+        exit;
+    } else {
+        die("Nie udało się przesłać avatara.");
+    }
+}
 ?>
 <!DOCTYPE html>
 <html lang="pl">
@@ -57,45 +108,43 @@ requireLogin();
 
         <section class="profile-container">
             <div class="profile-avatar">
-                <div class="avatar-preview" id="imagePreview">
-                    <style>
-                        <?php if (file_exists('users/avatars/' . $_SESSION["user_id"] . '.png')): ?>#imagePreview {
-                            background-image: url('users/avatars/<?php echo $_SESSION["user_id"]; ?>.png') !important;
-                        }
-
-                        <?php else: ?>#imagePreview {
-                            background-image: url('images/avatar.png') !important;
-                        }
-
-                        <?php endif; ?>
-                    </style>
+                <div class="avatar-preview" id="imagePreview" style="
+            background-image: url(
+                '<?= file_exists("users/avatars/$user_id.png") ? "users/avatars/$user_id.png" : "images/avatar.png" ?>'
+            );
+            background-size: cover;
+            background-position: center;
+            ">
                 </div>
 
-                <input class="input" type="file" id="imageInput" accept="image/*" />
+                <form class="avatar-form" method="post" enctype="multipart/form-data">
+                    <input class="input" type="file" name="avatar" accept="image/*" />
+                    <button type="submit" name="update_avatar">Zmień avatar</button>
+                </form>
             </div>
 
-            <form class="profile-form">
+            <form class="profile-form" method="post">
                 <label>
                     Nazwa użytkownika:
-                    <input type="text" value="<?php echo htmlspecialchars($_SESSION["username"]); ?>q" />
+                    <input type="text" name="username" value="<?= htmlspecialchars($user['username']) ?>" />
                 </label>
 
                 <label>
                     Nowe hasło:
-                    <input type="password" placeholder="••••••••" />
+                    <input type="password" name="password" placeholder="••••••••" />
                 </label>
 
                 <label>
                     Potwierdź hasło:
-                    <input type="password" placeholder="••••••••" />
+                    <input type="password" name="confirm_password" placeholder="••••••••" />
                 </label>
 
                 <div class="readonly-info">
-                    <p><strong>Email:</strong> jankowalski@email.com</p>
-                    <p><strong>Zarejestrowano:</strong> 2024-12-11</p>
+                    <p><strong>Email:</strong> <?= htmlspecialchars($user['email']) ?></p>
+                    <p><strong>Zarejestrowano:</strong> <?= htmlspecialchars($user['registered_at']) ?></p>
                 </div>
 
-                <button type="submit">Zapisz zmiany</button>
+                <button type="submit" name="update_profile">Zapisz zmiany</button>
             </form>
         </section>
     </main>
