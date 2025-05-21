@@ -6,7 +6,6 @@ requireLogin();
 
 $user_id = $_SESSION['user_id'];
 
-// Pobranie danych użytkownika
 $stmt = $pdo->prepare("SELECT email, username, registered_at FROM users WHERE id = ?");
 $stmt->execute([$user_id]);
 $user = $stmt->fetch();
@@ -20,7 +19,6 @@ if (isset($_POST['update_profile'])) {
         die("Hasła się nie zgadzają.");
     }
 
-    // Aktualizacja danych
     $sql = "UPDATE users SET username = :username";
     $params = [':username' => $newUsername];
 

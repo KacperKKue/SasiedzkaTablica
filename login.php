@@ -9,7 +9,6 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $email    = trim($_POST["email"] ?? '');
     $password = $_POST["password"] ?? '';
 
-    // Walidacja
     if ($email === '' || $password === '') {
         $errors[] = "Podaj adres e-mail i hasło.";
     } elseif (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
@@ -19,7 +18,6 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         $stmt->execute([$email]);
         $user = $stmt->fetch();
 
-        // Weryfikacja hasła
         if ($user && password_verify($password, $user["password"])) {
             $_SESSION["user_id"]  = $user["id"];
             $_SESSION["username"] = $user["username"];

@@ -53,11 +53,12 @@ footer.footer {
 }
 
 .input::file-selector-button {
-  background: none;
-  border: none;
-  padding: 5px;
-  font-family: inherit;
-  font-size: 14px;
+	font-weight: bold;
+	color: var(--dark-green);
+  background-color: transparent;
+	padding: 0.3em;
+	border: 2px solid var(--green);
+	border-radius: 5px;
 }
 
 .submit {
@@ -148,12 +149,45 @@ footer.footer {
     margin: 0.5rem 0;
 }
 
+.ad-title {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;      /* ograniczenie do 3 linii */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.ad-description {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;      /* ograniczenie do 3 linii */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.btn-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
 .check-btn {
     align-self: flex-start;
     padding: 0.5rem 1.5rem;
     border: none;
     border-radius: 12px;
     background-color: var(--green);
+    color: white;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.delete-btn {
+    align-self: flex-start;
+    padding: 0.5rem 1.5rem;
+    border: none;
+    border-radius: 12px;
+    background-color: var(--red);
     color: white;
     cursor: pointer;
     font-weight: bold;

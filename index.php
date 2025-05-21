@@ -70,16 +70,17 @@
 
 	<section>
 		<div class="section-title">JAK TO DZIAŁA</div>
+		<h2 class="how-it-works-title">Opublikuj swoje ogłoszenie</h2>
 		<div class="how-it-works">
-			<div class="icon" style="background-color: #f28c8c;"></div>
+			<div class="icon"></div>
 			<div class="work-box">
-				<strong>Praca</strong>
-				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin semper lorem sed sapien tempor, nec
-					interdum erat tincidunt.</p>
+				<strong>Wyoprowadzanie psa</strong>
+				<p>Szukam kogoś kto wyprowadzi mojego psa 2 razy w poniedziałki i piątki.</p>
 			</div>
-			<div class="icon" style="background-color: var(--light-orange);"></div>
-			<div class="icon" style="background-color: var(--light-lime);"></div>
+			<div class="icon"></div>
+			<div class="icon"></div>
 		</div>
+		<h2 class="how-it-works-title">Poczekaj na zainteresowane osoby i uzgodnij szczegóły.</h2>
 	</section>
 
 	<footer class="footer">

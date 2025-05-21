@@ -1,7 +1,7 @@
 <?php
 require_once 'include/auth.php';
 
-$avatarPath = 'images/avatar.png'; // domyślny awatar
+$avatarPath = 'images/avatar.png';
 
 if (isLoggedIn()) {
     $userId = $_SESSION["user_id"];

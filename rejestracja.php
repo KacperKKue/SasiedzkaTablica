@@ -25,15 +25,12 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         $errors[] = "Hasło musi zawierać przynajmniej jedną małą literę.";
     } elseif (!preg_match("/[0-9]/", $password)) {
         $errors[] = "Hasło musi zawierać przynajmniej jedną cyfrę.";
-    } elseif (!preg_match("/[\W_]/", $password)) {
-        $errors[] = "Hasło musi zawierać przynajmniej jeden znak specjalny.";
     } else if (empty($errors)) {
         $stmt = $pdo->prepare("SELECT id FROM users WHERE username = ? OR email = ?");
         $stmt->execute([$username, $email]);
         if ($stmt->fetch()) {
             $errors[] = "Taki użytkownik lub e-mail już istnieje.";
         } else {
-            // Zapisz użytkownika
             $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
             $stmt = $pdo->prepare("INSERT INTO users (username, email, password) VALUES (?, ?, ?)");
             $stmt->execute([$username, $email, $hashedPassword]);

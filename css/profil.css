@@ -1,115 +1,127 @@
 .profile-container {
-  max-width: 600px;
-  margin: 3rem auto;
-  padding: 2rem;
-  background-color: var(--medium-green);
-  border-radius: 10px;
-  color: var(--text);
+	max-width: 600px;
+	margin: 3rem auto;
+	padding: 2rem;
+	background-color: var(--medium-green);
+	border-radius: 10px;
+	color: var(--text);
 }
 
 .profile-avatar {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-bottom: 2rem;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin-bottom: 2rem;
 }
 
 .avatar-preview {
-  width: 120px;
-  height: 120px;
-  border-radius: 50%;
-  background-color: var(--light-green);
-  background-image: url("../images/default-avatar.png");
-  background-size: cover;
-  background-position: center;
-  margin-bottom: 1rem;
+	width: 120px;
+	height: 120px;
+	border-radius: 50%;
+	background-color: var(--light-green);
+	background-image: url("../images/default-avatar.png");
+	background-size: cover;
+	background-position: center;
+	margin-bottom: 1rem;
 }
 
 .profile-avatar img {
-  width: 120px;
-  height: 120px;
-  border-radius: 50%;
-  object-fit: cover;
-  margin-bottom: 1rem;
-  background-color: var(--light-green);
+	width: 120px;
+	height: 120px;
+	border-radius: 50%;
+	object-fit: cover;
+	margin-bottom: 1rem;
+	background-color: var(--light-green);
 }
 
 .avatar-form {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 1rem;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 1rem;
 }
 
 .avatar-form button {
-  padding: 0.5rem 1rem;
-  background-color: var(--green);
-  color: white;
-  border: none;
-  border-radius: 20px;
-  font-size: 1rem;
-  font-weight: bold;
-  cursor: pointer;
-  transition: background-color 0.2s ease;
+	padding: 0.5rem 1rem;
+	background-color: var(--green);
+	color: white;
+	border: none;
+	border-radius: 20px;
+	font-size: 1rem;
+	font-weight: bold;
+	cursor: pointer;
+	transition: background-color 0.2s ease;
+}
+
+.avatar-form button:hover {
+	background-color: var(--dark-green);
+}
+
+.avatar-form input::file-selector-button {
+	font-weight: bold;
+	color: var(--dark-green);
+	padding: 0.3em;
+	border: 2px solid var(--green);
+	border-radius: 5px;
 }
 
 .input {
-  padding: 10px;
-  border: none;
-  border-radius: 10px;
-  background-color: #d0e0cf;
-  font-size: 14px;
+	padding: 10px;
+	border: none;
+	border-radius: 10px;
+	background-color: #d0e0cf;
+	font-size: 14px;
 }
 
 .input::file-selector-button {
-  background: none;
-  border: none;
-  padding: 5px;
-  font-family: inherit;
-  font-size: 14px;
+	background: none;
+	border: none;
+	padding: 5px;
+	font-family: inherit;
+	font-size: 14px;
 }
 
 .profile-form {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
+	display: flex;
+	flex-direction: column;
+	gap: 1rem;
 }
 
 .profile-form label {
-  display: flex;
-  flex-direction: column;
-  font-weight: bold;
+	display: flex;
+	flex-direction: column;
+	font-weight: bold;
 }
 
 .profile-form input[type="text"],
 .profile-form input[type="password"] {
-  padding: 0.5rem 1rem;
-  border-radius: 5px;
-  border: none;
-  background-color: var(--light-green);
-  margin-top: 0.5rem;
+	padding: 0.5rem 1rem;
+	border-radius: 5px;
+	border: none;
+	background-color: var(--light-green);
+	margin-top: 0.5rem;
 }
 
 .readonly-info {
-  margin-top: 1rem;
-  padding: 1rem;
-  background-color: var(--light-green);
-  border-radius: 5px;
+	margin-top: 1rem;
+	padding: 1rem;
+	background-color: var(--light-green);
+	border-radius: 5px;
 }
 
 .profile-form button {
-  margin-top: 1.5rem;
-  padding: 0.75rem 2rem;
-  background-color: var(--green);
-  color: white;
-  border: none;
-  border-radius: 20px;
-  font-size: 1rem;
-  font-weight: bold;
-  cursor: pointer;
-  transition: background-color 0.2s ease;
+	margin-top: 1.5rem;
+	padding: 0.75rem 2rem;
+	background-color: var(--green);
+	color: white;
+	border: none;
+	border-radius: 20px;
+	font-size: 1rem;
+	font-weight: bold;
+	cursor: pointer;
+	transition: background-color 0.2s ease;
 }
 
 .profile-form button:hover {
-  background-color: #2f612f;
+	background-color: #2f612f;
 }
