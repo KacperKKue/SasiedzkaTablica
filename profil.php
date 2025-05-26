@@ -121,20 +121,20 @@ if (isset($_POST['update_avatar'])) {
                 </form>
             </div>
 
-            <form class="profile-form" method="post">
+            <form class="profile-form" autocomplete="off" method="post">
                 <label>
                     Nazwa użytkownika:
-                    <input type="text" name="username" value="<?= htmlspecialchars($user['username']) ?>" />
+                    <input type="text" name="username" autocomplete="address-level3" value="<?= htmlspecialchars($user['username']) ?>" />
                 </label>
 
                 <label>
                     Nowe hasło:
-                    <input type="password" name="password" placeholder="••••••••" />
+                    <input type="password" name="password" autocomplete="new-password" placeholder="••••••••" />
                 </label>
 
                 <label>
                     Potwierdź hasło:
-                    <input type="password" name="confirm_password" placeholder="••••••••" />
+                    <input type="password" name="confirm_password" autocomplete="new-password" placeholder="••••••••" />
                 </label>
 
                 <div class="readonly-info">

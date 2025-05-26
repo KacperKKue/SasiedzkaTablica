@@ -39,7 +39,7 @@ $imageExists = file_exists($imagePath);
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title>Sąsiedzka Tablica | Ogłoszenie - </title>
+    <title>Sąsiedzka Tablica | Ogłoszenie - <?= htmlspecialchars($ad['title']) ?></title>
 
     <link rel="icon" type="image/x-icon" href="images/favicon.ico" />
 
